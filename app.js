@@ -5,6 +5,7 @@ let checkBtn = document.querySelector(".btn-checker");
 let message = document.querySelector(".message");
 let number = document.querySelector(".number");
 let score = document.querySelector(".score")
+let again = document.querySelector(".again")
 
 function gamer(e) {
   e.preventDefault();
@@ -38,3 +39,15 @@ function gamer(e) {
 }
 
 checkBtn.addEventListener("click", gamer);
+
+function resetgame(){
+  score.textContent = "6";
+  number.textContent = "?";
+  message.textContent = "start guessing...";
+  inpOfGuess.value = "";
+  document.body.style.backgroundColor = "red";
+  checkBtn.removeAttribute("disabled");
+  checkBtn.style.backgroundColor = "";
+  checkBtn.style.cursor = "pointer";
+}
+again.addEventListener("click",resetgame)
